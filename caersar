@@ -5,35 +5,39 @@
 
 int main(int argc, string argv[])
 {
-    if (argc == 2)
+// Counting Command-Line Arguments and checking if all numbers
+    if (argc != 2)
     {
-        string number =  argv[1]; /*atoi  */ 
-         int len = strlen(number);
-        
-        while(int i = 0, i < len)
-        {
-            
-            
-        }
-        /*for (int i = 0, n = strlen(number); i < n ; i++)
-        {
-            bool num_check;
-            if ((isdigit(number[i]) != 0) || (number[i] = 0))
-            {
-                num_check = True;
-                printf("correct number\n");
-            }
-            else 
-            {
-                printf("wrong symbols\n");
-                return 1;
-            }
-        }
-        */
+        printf("Usage: ./caesar key\n"); 
     }
     else
     {
-        printf("zła ilość argumentów \n");
+        string number =  argv[1]; //atoi   
+        int len = strlen(number), i = 0;
+        int num_check = 0;        //  0 - true, 1 - false
+        while(i < len)
+        {
+            if ((isdigit(number[i]) == 0) && (number[i] != 0))
+            {
+                num_check = 1;
+            }
+            i++;
+        }
+        if( num_check == 0)
+        {
+            printf("Succes\n");
+            printf("")
+        }
+        else
+        {
+            printf("Usage: ./caesar key\n");
+        }
     }
+//----------   
+    
+    
+    
+    
+    
     return 0;
 }
