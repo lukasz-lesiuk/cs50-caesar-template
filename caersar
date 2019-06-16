@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int conv(int,int,int);
+int conv(int, int, int);
 
 
 int main(int argc, string argv[])
@@ -44,12 +44,12 @@ int main(int argc, string argv[])
         //for big letters
         if ((i > 'A') && (i < 'Z'))
         {
-            i = conv(i,key,65);         
+            i = conv(i, key, 65);         
         }
         //for small letters
         else if ((i > 'a') && (i < 'z'))
         {
-            i = conv(i,key,97);       
+            i = conv(i, key, 97);       
         }
 //print ciphertext char
         text[j] = i;
@@ -62,7 +62,7 @@ int main(int argc, string argv[])
 }
 
 //function - convert to alphabetical
-int conv(int i,int k,int step)
+int conv(int i, int k, int step)
 {
     int a = i - step;
     a = (a + k) % 26;
