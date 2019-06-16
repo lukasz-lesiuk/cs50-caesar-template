@@ -12,7 +12,7 @@ int main(int argc, string argv[])
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n"); 
-        return 3;
+        return 1;
     }
     else
     {
@@ -42,12 +42,12 @@ int main(int argc, string argv[])
     {
         int i = text[j];  
         //for big letters
-        if ((i > 'A') && (i < 'Z'))
+        if ((i >= 'A') && (i <= 'Z'))
         {
             i = conv(i, key, 65);         
         }
         //for small letters
-        else if ((i > 'a') && (i < 'z'))
+        else if ((i >= 'a') && (i <= 'z'))
         {
             i = conv(i, key, 97);       
         }
