@@ -1,0 +1,39 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(int argc, string argv[])
+{
+    if (argc == 2)
+    {
+        string number =  argv[1]; /*atoi  */ 
+         int len = strlen(number);
+        
+        while(int i = 0, i < len)
+        {
+            
+            
+        }
+        /*for (int i = 0, n = strlen(number); i < n ; i++)
+        {
+            bool num_check;
+            if ((isdigit(number[i]) != 0) || (number[i] = 0))
+            {
+                num_check = True;
+                printf("correct number\n");
+            }
+            else 
+            {
+                printf("wrong symbols\n");
+                return 1;
+            }
+        }
+        */
+    }
+    else
+    {
+        printf("zła ilość argumentów \n");
+    }
+    return 0;
+}
