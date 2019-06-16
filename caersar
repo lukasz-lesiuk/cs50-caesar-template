@@ -12,32 +12,38 @@ int main(int argc, string argv[])
     }
     else
     {
-        string number =  argv[1]; //atoi   
-        int len = strlen(number), i = 0;
+        string input =  argv[1];  
+        int len = strlen(input), i = 0;
         int num_check = 0;        //  0 - true, 1 - false
-        while(i < len)
+        while (i < len)
         {
-            if ((isdigit(number[i]) == 0) && (number[i] != 0))
+            if ((isdigit(input[i]) == 0) && (input[i] != 0))
             {
                 num_check = 1;
             }
             i++;
         }
-        if( num_check == 0)
+        if (num_check == 0)
         {
             printf("Succes\n");
-            printf("")
         }
         else
         {
             printf("Usage: ./caesar key\n");
+            return 1;
         }
     }
-//----------   
-    
-    
-    
-    
-    
+//ask for plain text----------       
+    string text = get_string("plaintext:  ");
+    // printf("\n");
+// make ciphertext
+    int key = atoi(argv[1]);
+    printf("ciphertext: ");
+    for (int j = 0, m = strlen(text); j < m; j++)
+    {
+        text[j] = text[j] + key;
+        printf("%c", text[j]);
+    }
+    printf("\n");
     return 0;
 }
