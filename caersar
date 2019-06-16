@@ -3,6 +3,9 @@
 #include <string.h>
 #include <ctype.h>
 
+int conv(int,int,int);
+
+
 int main(int argc, string argv[])
 {
 // Counting Command-Line Arguments and checking if all numbers
@@ -37,38 +40,32 @@ int main(int argc, string argv[])
     printf("ciphertext: ");
     for (int j = 0, m = strlen(text); j < m; j++)
     {
-        int i = text[j];
-//check for overloading ASCII array      
-        //if ((i + key) > 127)
-        //{
-        //    i = i + 127;
-        //}
-      
+        int i = text[j];  
         //for big letters
-        if ((i > 64) && (i < 91))
+        if ((i > 'A') && (i < 'Z'))
         {
-            i = (i + key) % 90;
-            if (i < 65)
-            {
-                i = i + 64;
-            }                
+            i = conv(i,key,65);         
         }
         //for small letters
-        else if ((i > 96) && (i < 123))
+        else if ((i > 'a') && (i < 'z'))
         {
-            i = (i + key) % 122;
-            if (i < 97)
-            {
-                i = i + 96;
-            }   
+            i = conv(i,key,97);       
         }
-
-        if 
 //print ciphertext char
         text[j] = i;
-        printf("%i %c |", text[j],text[j] );
+        //printf("%i %c |", text[j],text[j] );
+        printf("%c", text[j]);
         
     }
     printf("\n");
     return 0;
+}
+
+//function - convert to alphabetical
+int conv(int i,int k,int step)
+{
+    int a = i - step;
+    a = (a + k) % 26;
+    i = a + step;  
+    return i;  
 }
